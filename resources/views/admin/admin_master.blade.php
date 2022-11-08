@@ -1,149 +1,152 @@
 <!DOCTYPE html>
-<html lang="en">
+<html
+    lang="en"
+    class="light-style layout-menu-fixed"
+    dir="ltr"
+    data-theme="theme-default"
+    data-assets-path="../assets/"
+    data-template="vertical-menu-template-free"
+>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="keywords" content="">
-    <meta name="author" content="">
-    <meta name="robots" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Jobick : Job Admin Bootstrap 5 Template">
-    <meta property="og:title" content="Jobick : Job Admin Bootstrap 5 Template">
-    <meta property="og:description" content="Jobick : Job Admin Bootstrap 5 Template">
-    <meta property="og:image" content="https://jobick.dexignlab.com/xhtml/social-image.png">
-    <meta name="format-detection" content="telephone=no">
-{{ asset('') }}
-    <!-- PAGE TITLE HERE -->
-    <title>Jobick Job Admin</title>
+    <meta charset="utf-8" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
+    />
 
-    <!-- FAVICONS ICON -->
-    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
-    <link href="{{ asset('/assets/vendor/jquery-nice-select/css/nice-select.css') }}" rel="stylesheet">
-    <link href="{{ asset('/assets/vendor/owl-carousel/owl.carousel.css') }}" rel="stylesheet">
+    <title>Dashboard -Fiona Business Development Site</title>
 
-    <!-- Style css -->
-    <link href="{{ asset('/assets/css/style.css') }}" rel="stylesheet">
+    <meta name="description" content="" />
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ asset('public/backend/img/favicon/favicon.ico') }}" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet"/>
+
+    <!-- Icons. Uncomment required icon fonts -->
+    <link rel="stylesheet" href="{{ asset('public/backend/vendor/fonts/boxicons.css') }}" />
+
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="{{ asset('public/backend/vendor/css/core.css') }}" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="{{ asset('public/backend/vendor/css/theme-default.css') }}" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="{{ asset('public/backend/css/demo.css') }}" />
+
+    <!-- Vendors CSS -->
+    <link rel="stylesheet" href="{{ asset('public/backend/vendor/libs/perfect-scrollbar/perfect-scrollbar.css') }}" />
+    <link rel="stylesheet" href="{{ asset('public/backend/vendor/libs/apex-charts/apex-charts.css') }}" />
+    <link rel="stylesheet" href="{{ asset('public/backend/vendor/css/pages/page-auth.css') }}" />
+    <!-- Page CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" >
+
+    <!-- Helpers -->
+    <script src="{{ asset('public/backend/vendor/js/helpers.js') }}"></script>
+    <script src="{{ asset('public/backend/js/config.js') }}"></script>
 </head>
+
 <body>
+    <div class="layout-wrapper layout-content-navbar">
+        <div class="layout-container">
 
-<!--*******************
-    Preloader start
-********************-->
-<div id="preloader">
-    <div class="lds-ripple">
-        <div></div>
-        <div></div>
+            <!-- Menu -->
+            @include('admin.body.sidebar')
+            <!-- / Menu -->
+
+            <!-- Layout container -->
+            <div class="layout-page">
+
+                <!-- Navbar -->
+                @include('admin.body.header')
+                <!-- / Navbar -->
+
+                <!-- Content wrapper -->
+                <div class="content-wrapper">
+                    <!-- Content -->
+
+                    @yield('content')
+                    <!-- / Content -->
+
+                    <!-- Footer -->
+                    @include('admin.body.footer')
+                    <!-- / Footer -->
+
+                    <div class="content-backdrop fade"></div>
+                </div>
+                <!-- Content wrapper -->
+            </div>
+            <!-- / Layout page -->
+        </div>
+
+        <!-- Overlay -->
+        <div class="layout-overlay layout-menu-toggle"></div>
     </div>
-</div>
-<!--*******************
-    Preloader end
-********************-->
+    <!-- Core JS -->
+    <!-- build:js assets/vendor/js/core.js -->
+    <script src="{{ asset('public/backend/vendor/libs/jquery/jquery.js') }}"></script>
+    <script src="{{ asset('public/backend/vendor/libs/popper/popper.js') }}"></script>
+    <script src="{{ asset('public/backend/vendor/js/bootstrap.js') }}"></script>
+    <script src="{{ asset('public/backend/vendor/libs/perfect-scrollbar/perfect-scrollbar.js') }}"></script>
+    <script src="{{ asset('public/backend/vendor/js/menu.js') }}"></script>
+    <!-- endbuild -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-<!--**********************************
-    Main wrapper start
-***********************************-->
-<div id="main-wrapper">
+    <!-- Vendors JS -->
+    <script src="{{ asset('public/backend/vendor/libs/apex-charts/apexcharts.js') }}"></script>
 
+    <!-- Main JS -->
+    <script src="{{ asset('public/backend/js/main.js') }}"></script>
 
-@yield('admin')
+    <!-- Page JS -->
+    <script src="{{ asset('public/backend/js/dashboards-analytics.js') }}"></script>
 
-</div>
-<!--**********************************
-    Main wrapper end
-***********************************-->
+    <!--tinymce js-->
+    <script src="https://cdn.tiny.cloud/1/uyqgpgab5lfckc0skk5jhlfj79ij8a22dqzdhhqs29zpf5qf/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
-<!--**********************************
-    Scripts
-***********************************-->
-<!-- Required vendors -->
-<script src="{{ asset('assets') }}/vendor/global/global.min.js"></script>
-<script src="{{ asset('assets') }}/vendor/chart.js/Chart.bundle.min.js"></script>
-<script src="{{ asset('assets') }}/vendor/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+    <script>
+        @if(Session::has('message'))
+        var type = "{{ Session::get('alert-type','info') }}"
+        switch(type){
+            case 'info':
+                toastr.info(" {{ Session::get('message') }} ");
+                break;
 
-{{--<!-- Apex Chart -->--}}
-{{--<script src="{{ asset('assets') }}/vendor/apexchart/apexchart.js"></script>--}}
+            case 'success':
+                toastr.success(" {{ Session::get('message') }} ");
+                break;
 
-{{--<script src="{{ asset('assets') }}/vendor/chart.js/Chart.bundle.min.js"></script>--}}
+            case 'warning':
+                toastr.warning(" {{ Session::get('message') }} ");
+                break;
 
-{{--<!-- Chart piety plugin files -->--}}
-{{--<script src="{{ asset('assets') }}/vendor/peity/jquery.peity.min.js"></script>--}}
+            case 'error':
+                toastr.error(" {{ Session::get('message') }} ");
+                break;
+                }
+        @endif
 
-<!-- Dashboard 1 -->
-<script src="{{ asset('assets/js/dashboard/dashboard-1.js') }}"></script>
+    </script>
+    <script>
+        tinymce.init({
+            selector: 'texteditor',
+            // plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage tinycomments tableofcontents footnotes mergetags autocorrect',
+            // toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
+            height: '300px',
+            // tinycomments_mode: 'embedded',
+            // tinycomments_author: 'Author name',
+            // mergetags_list: [
+            //     { value: 'First.Name', title: 'First Name' },
+            //     { value: 'Email', title: 'Email' },
+            // ]
+        });
+    </script>
 
-<script src="{{ asset('assets/vendor/owl-carousel/owl.carousel.js') }}"></script>
-
-<script src="{{ asset('assets/js/custom.min.js') }}"></script>
-<script src="{{ asset('assets/js/dlabnav-init.js') }}"></script>
-<script src="{{ asset('assets/js/demo.js') }}"></script>
-<script src="{{ asset('assets/js/styleSwitcher.js') }}"></script>
-<script src="{{ asset('assets/js/toastr.min.js') }}"></script>
-
-<script>
-    @if(Session::has('message'))
-    var type="{{Session::get('alert-type','info')}}"
-    switch(type){
-        case 'info':
-            toastr.info("{{ Session::get('message') }}");
-            break;
-        case 'success':
-            toastr.success("{{ Session::get('message') }}");
-            break;
-        case 'warning':
-            toastr.warning("{{ Session::get('message') }}");
-            break;
-        case 'error':
-            toastr.error("{{ Session::get('message') }}");
-            break;
-    }
-    @endif
-</script>
-
-<script>
-    // function JobickCarousel()
-    // {
-    //
-    //     /*  testimonial one function by = owl.carousel.js */
-    //     jQuery('.front-view-slider').owlCarousel({
-    //         loop:false,
-    //         margin:30,
-    //         nav:true,
-    //         autoplaySpeed: 3000,
-    //         navSpeed: 3000,
-    //         autoWidth:true,
-    //         paginationSpeed: 3000,
-    //         slideSpeed: 3000,
-    //         smartSpeed: 3000,
-    //         autoplay: false,
-    //         animateOut: 'fadeOut',
-    //         dots:true,
-    //         navText: ['', ''],
-    //         responsive:{
-    //             0:{
-    //                 items:1
-    //             },
-    //
-    //             480:{
-    //                 items:1
-    //             },
-    //
-    //             767:{
-    //                 items:3
-    //             },
-    //             1750:{
-    //                 items:3
-    //             }
-    //         }
-    //     })
-    // }
-
-    // jQuery(window).on('load',function(){
-    //     setTimeout(function(){
-    //         JobickCarousel();
-    //     }, 1000);
-    // });
-</script>
 
 </body>
 </html>
+
+
+
